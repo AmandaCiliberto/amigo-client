@@ -38,14 +38,25 @@ function AddRecommendation(props) {
       .catch((error) => console.log(error));
   };
 
-  // ********  this method handles the file upload ********
-  // const handleFileChange = (e) => {
-  //   const img = {
-  //     preview: URL.createObjectURL(e.target.files[0]),
-  //     data: e.target.files[0],
-  //   };
-  //   setImageUrl(img);
-  // };
+  /* //********  this method handles the file upload ********
+  const uploadImage = (files) => {
+    //console.log(files[0]);
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "wookleyv");
+
+    axios.post(
+      "https://api.cloudinary.com/v1_1/dsdedpywa/image/upload",
+      formData
+    ).then((response) => {
+      console.log(response);
+    })
+    // const img = {
+    //   preview: URL.createObjectURL(e.target.files[0]),
+    //   data: e.target.files[0],
+    // };
+    // setImageUrl(img);
+  }; */
 
   return (
     <div className="AddRecommendation">
@@ -60,16 +71,17 @@ function AddRecommendation(props) {
           onChange={(e) => setContent(e.target.value)}
         />
 
-        {/* <label>Location</label>
+        <label>Location</label>
         <input
           type="text"
           name="location"
           value={location}
-          onChange={(e) => setContent(e.target.value)}
-        /> */}
+          onChange={(e) => setLocation(e.target.value)}
+        />
 
         {/* <label>Image:</label>
-        <input type="file" onChange={(e) => handleFileChange(e)} /> */}
+        <input type="file" onChange={(e) => setImageUrl} />
+        <button onClick={uploadImage}>Upload Image</button> */}
 
         <button type="submit">Recommend</button>
       </form>

@@ -45,10 +45,15 @@ function RecommendationDetailsPage (props) {
         </>
       )}
 
-      <AddComment refreshRecommendations={getRecommendation} recommendationId={id} />
+      <AddComment
+        refreshRecommendations={getRecommendation}
+        recommendationId={id}
+      />
 
       {recommendation &&
-        recommendation.comments.map((comment) => <CommentCard key={comment._id} {...comment} />)}
+        recommendation.comments.map((comment) => (
+          <CommentCard key={comment._id} {...comment} />
+        ))}
 
       <Link to="/recommendations">
         <button>Back to browse recommendations</button>
