@@ -12,31 +12,63 @@ import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
-    <div className="App">
+    //following BEM convention
+    <div className="app">
       <Navbar />
 
-      <Routes>      
-        <Route path="/" element={ <HomePage /> } />
- 
+      <Routes>
+        
+         <Route path="/" element={<HomePage />} />
+
         {/*   UPDATE THE BELOW ROUTES   */}
         <Route
           path="/recommendations"
-          element={ <IsPrivate> <RecommendationListPage /> </IsPrivate> } 
+          element={
+            <IsPrivate>
+              {" "}
+              <RecommendationListPage />{" "}
+            </IsPrivate>
+          }
         />
- 
+
         <Route
           path="/recommendations/:id"
-          element={ <IsPrivate> <RecommendationDetailsPage /> </IsPrivate> }
+          element={
+            <IsPrivate>
+              {" "}
+              <RecommendationDetailsPage />{" "}
+            </IsPrivate>
+          }
         />
- 
+
         <Route
           path="/recommendations/edit/:id"
-          element={ <IsPrivate> <EditRecommendationPage /> </IsPrivate> } 
+          element={
+            <IsPrivate>
+              {" "}
+              <EditRecommendationPage />{" "}
+            </IsPrivate>
+          }
         />
-        
-        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
- 
+
+        <Route
+          path="/signup"
+          element={
+            <IsAnon>
+              {" "}
+              <SignupPage />{" "}
+            </IsAnon>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <IsAnon>
+              {" "}
+              <LoginPage />{" "}
+            </IsAnon>
+          }
+        />
       </Routes>
     </div>
   );

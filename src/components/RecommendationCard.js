@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/auth.context";
 import Avatar from "react-avatar";
-
+import { Chat, Favorite } from "grommet-icons";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
 function RecommendationCard({ userId, content, imageUrl, location, _id }) {
@@ -11,36 +10,34 @@ function RecommendationCard({ userId, content, imageUrl, location, _id }) {
   //  findByIdandUpdate
 
   return (
-    <div className="RecommendationCard card">
+    <div className="post card">
       <div className="post_avatar">
-        <Avatar
-          size={70}
-          color={Avatar.getRandomColor("sitebase", ["red", "green", "blue"])}
-          name="Wim Mostmans"
-          round={true}
-        />
+        <Avatar size={50} color={"grey"} name="Wim Mostmans" round={true} />
       </div>
 
-      <div className="post_body">
-        <div className="post_header">
-          <div className="post_headerText">
-            <h3>
-             {userId} 
-            </h3>
+      <Link to={`/recommendations/${_id}`} className="link">
+        <div className="post_body">
+          <div className="post_header">
+            <div className="post_headerText">
+              <h3>
+                {userId}{" "}
+                <span className="post_headerSpecial">
+                  <VerifiedIcon className="post_badge" />
+                </span>
+              </h3>
+            </div>
+            <div className="post_headerDescription">
+              <p>{content} </p>
+              <p>{location} </p>
+            </div>
+          </div>
+          <img src={imageUrl} alt="recommendation img" />
+          <div className="post_footer">
+            <Chat color="plain" size="20px" />
+            <Favorite color="plain" size="20px" />
           </div>
         </div>
-        <p style={{ maxWidth: "700px" }}>{content} </p>
-      <p style={{ maxWidth: "200px" }}>{location} </p>
-      <Link to={`/recommendations/${_id}`}>
-        <h3>See Details</h3>
       </Link>
-      <img
-        src={imageUrl}
-        style={{ maxWidth: "400px" }}
-        alt="recommendation img"
-      />
-      </div>
-      
     </div>
   );
 }
