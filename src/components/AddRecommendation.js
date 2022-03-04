@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 /* import { useParams } from "react-router-dom"; */
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
-// import uploadImage from "../api/uploadImage";
+import uploadImage from "../api/uploadImage";
 
 const API_URL = "http://0.0.0.0:5005";
 
@@ -38,25 +38,19 @@ function AddRecommendation(props) {
       .catch((error) => console.log(error));
   };
 
-  /* //********  this method handles the file upload ********
-  const uploadImage = (files) => {
-    //console.log(files[0]);
-    const formData = new FormData();
-    formData.append("file", files[0]);
-    formData.append("upload_preset", "wookleyv");
+  //********  this method handles the file upload ********
+  const handleFileUpload = (e) => {
+    // console.log("the file uploaded is: ", e.target.files[0]);
 
-    axios.post(
-      "https://api.cloudinary.com/v1_1/dsdedpywa/image/upload",
-      formData
-    ).then((response) => {
-      console.log(response);
-    })
-    // const img = {
-    //   preview: URL.createObjectURL(e.target.files[0]),
-    //   data: e.target.files[0],
-    // };
-    // setImageUrl(img);
-  }; */
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    uploadImage(uploadData)
+      .then((response) => {
+        setImageUrl(response.imageUrl);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
 
   return (
     <div className="AddRecommendation">
@@ -79,9 +73,8 @@ function AddRecommendation(props) {
           onChange={(e) => setLocation(e.target.value)}
         />
 
-        {/* <label>Image:</label>
-        <input type="file" onChange={(e) => setImageUrl} />
-        <button onClick={uploadImage}>Upload Image</button> */}
+        <label>Image:</label>
+        <input type="file" onChange={(e) => handleFileUpload(e)} />
 
         <button type="submit">Recommend</button>
       </form>

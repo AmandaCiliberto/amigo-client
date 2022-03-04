@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { v4 as randomId } from 'uuid';
 
 import RecommendationCard from "./../components/RecommendationCard";
 import AddRecommendation from "../components/AddRecommendation";

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import uploadImage from "../api/uploadImage";
 
 // We are deconstructing props object directly in the parentheses of the function
 function RecommendationCard({
@@ -10,6 +11,8 @@ function RecommendationCard({
 }) 
 
 {
+console.log('props', userId, content, imageUrl, location, _id);
+
   return (
     <div className="RecommendationCard card">
       <p style={{ maxWidth: "700px" }}>{content} </p>
@@ -20,7 +23,7 @@ function RecommendationCard({
       <img
         src={imageUrl}
         style={{ maxWidth: "400px" }}
-        alt="user profile face"
+        alt="recommendation img"
       />
     </div>
   );
