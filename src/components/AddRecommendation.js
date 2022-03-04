@@ -8,6 +8,8 @@ const API_URL = "http://0.0.0.0:5005";
 
 function AddRecommendation(props) {
   const { user } = useContext(AuthContext);
+  // console.log('user id', userId)
+  // const username = userId.name;
 
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -17,7 +19,8 @@ function AddRecommendation(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const requestBody = { content, imageUrl, location };
+    const requestBody = { userId: user._id , content, imageUrl, location };
+    console.log('req body', requestBody)
     //get token
     const storedToken = localStorage.getItem("authToken");
 
@@ -30,6 +33,7 @@ function AddRecommendation(props) {
       )
       .then((response) => {
         // Reset the state
+        // console.log(response)
         setContent("");
         setImageUrl("");
         setLocation("");

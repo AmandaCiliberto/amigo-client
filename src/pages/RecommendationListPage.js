@@ -41,7 +41,10 @@ function RecommendationListPage() {
       />
 
       {recommendations.map((recommendation) => (
-        <RecommendationCard key={recommendation._id} {...recommendation} />
+        <RecommendationCard
+          key={recommendation._id}
+          {...recommendation}
+        />
       ))}
     </div>
   );
