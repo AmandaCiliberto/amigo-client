@@ -20,7 +20,7 @@ const uploadImage = (file) => {
     //verify token
     { headers: { Authorization: `Bearer ${storedToken}` } })
     .then((res) => {
-      // console.log('response from image upload:',res.data);
+      console.log('response from image upload:',res.data);
       return res.data
     })
     .catch(errorHandler);

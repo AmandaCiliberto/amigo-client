@@ -9,12 +9,11 @@ import {
   Search,
   Notification,
   MailOption,
-  Bookmark,
-  Actions,
+  Bookmark
 } from "grommet-icons";
 import { Button } from "@material-ui/core";
-import Avatar from "react-avatar";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import { Avatar, Box } from 'grommet';
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -31,12 +30,9 @@ function Navbar() {
           </Link> */}
           <div>
             <div className="post_avatar">
-              <Avatar
-                size={50}
-                color={"grey"}
-                name="Wim Mostmans"
-                round={true}
-              />
+              <Box direction="row" gap="small">
+                <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+              </Box>
               <div className="post_headerText">
                 <h3>
                   {user && user.name}{" "}

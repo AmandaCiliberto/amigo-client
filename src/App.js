@@ -9,6 +9,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";  // <== IMPORT
 import IsAnon from "./components/IsAnon"; 
+import Widgets from "./components/Widgets";
 
 function App() {
   return (
@@ -17,10 +18,8 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/" element={<HomePage />} />
 
-         <Route path="/" element={<HomePage />} />
-
-        {/*   UPDATE THE BELOW ROUTES   */}
         <Route
           path="/recommendations"
           element={
@@ -70,6 +69,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Widgets />
     </div>
   );
 }
