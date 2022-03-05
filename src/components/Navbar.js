@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import "../Navbar.css";
+import "../css/Navbar.css";
 import NavbarOption from "./NavbarOption";
 import {
   HomeRounded,
@@ -10,6 +10,7 @@ import {
   Notification,
   MailOption,
   Bookmark,
+  Actions,
 } from "grommet-icons";
 import { Button } from "@material-ui/core";
 import Avatar from "react-avatar";
@@ -19,8 +20,8 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav className="navbar">
-      <h3 style={{ fontFamily: "Sans Serif" }}>AMIGO</h3>
+    <nav className="sidebar">
+      <h3 className="sidebar_logo">AMIGO</h3>
 
       {/*    UPDATE     */}
       {isLoggedIn && (
@@ -48,15 +49,15 @@ function Navbar() {
           </div>
           {/* <span>Hi {user && user.name}</span> */}
 
-          <Link to="/recommendations" className="link">
+          <Link to="/recommendations" style={{ textDecoration: "none" }}>
             <NavbarOption
               active
-              icon={<HomeRounded size="15px" />}
+              icon={<HomeRounded color="#9e79f5" size="15px" />}
               text="Home"
             />
           </Link>
 
-          <Link to="/recommendations" className="link">
+          <Link to="/recommendations" style={{ textDecoration: "none" }}>
             <NavbarOption icon={<Favorite size="15px" />} text="Likes" />
           </Link>
 
@@ -68,7 +69,12 @@ function Navbar() {
           <NavbarOption icon={<MailOption size="15px" />} text="Messages" />
           <NavbarOption icon={<Bookmark size="15px" />} text="Bookmarks" />
 
-          <Button variant="outlined" className="sidebar_logout" fullWidth onClick={logOutUser}>
+          <Button
+            variant="outlined"
+            className="sidebar_button"
+            fullWidth
+            onClick={logOutUser}
+          >
             Logout
           </Button>
         </>
@@ -76,12 +82,17 @@ function Navbar() {
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup" className="link">
-            <NavbarOption text="Sign Up" />
-          </Link>
-          <Link to="/login" className="link">
-            <NavbarOption text="Login" />
-          </Link>
+          <Button className="sidebar_button">
+            <Link to="/signup" className="link">
+              <NavbarOption text="Sign Up" />
+            </Link>
+          </Button>
+
+          <Button className="sidebar_button">
+            <Link to="/login" className="link">
+              <NavbarOption text="Login" />
+            </Link>
+          </Button>
         </>
       )}
     </nav>

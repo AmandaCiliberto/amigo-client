@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Feed from '../css/Feed.css'
+import Friends from "../components/Friends";
 
 import RecommendationCard from "./../components/RecommendationCard";
 import AddRecommendation from "../components/AddRecommendation";
@@ -35,7 +37,16 @@ function RecommendationListPage() {
   }, [] );
 
   return (
-    <div className="RecommendationListPage">
+    <div>
+      
+      {/* header */}
+      <div className="feed">
+        <h2>Home</h2>
+      </div>
+      
+
+
+      {/* postbox */}
       <AddRecommendation
         refreshRecommendations={getAllRecommendations}
       />
@@ -46,6 +57,9 @@ function RecommendationListPage() {
           {...recommendation}
         />
       ))}
+
+      {/* friend list */}
+      <Friends />
     </div>
   );
 }

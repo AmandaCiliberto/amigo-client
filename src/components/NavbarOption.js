@@ -1,5 +1,5 @@
 import React from 'react'
-import '../NavbarOption.css';
+import '../css/NavbarOption.css';
 
 //passing Icon component as prop
 function NavbarOption({ active, text, icon }) {

@@ -1,0 +1,16 @@
+.feed {
+    flex: 0.4;
+    border-right: 1px solid var(--amigo-background);
+    /* min-width: fit-content; */
+    overflow-y: scroll;
+}
+
+.feed_header {
+   /*  sticks to the top when scrolling */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--amigo-background);
+    padding: 15px 20px;
+}

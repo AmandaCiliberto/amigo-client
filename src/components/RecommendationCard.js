@@ -15,7 +15,10 @@ function RecommendationCard({ userId, content, imageUrl, location, _id }) {
         <Avatar size={50} color={"grey"} name="Wim Mostmans" round={true} />
       </div>
 
-      <Link to={`/recommendations/${_id}`} className="link">
+      <Link
+        to={`/recommendations/${_id}`}
+        style={{ textDecoration: "none", color: "rgb(46, 46, 46)" }}
+      >
         <div className="post_body">
           <div className="post_header">
             <div className="post_headerText">
