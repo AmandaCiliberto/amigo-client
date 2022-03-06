@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import '../css/Feed.css'
 
 import RecommendationCard from "./../components/RecommendationCard";
 import AddRecommendation from "../components/AddRecommendation";

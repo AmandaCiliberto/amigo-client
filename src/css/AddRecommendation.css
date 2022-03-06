@@ -1,6 +1,6 @@
 .addPost {
     padding-bottom: 10px;
-    border-bottom: 8px solid var(--amigo-background);
+    border-bottom: 8px solid var(--amigo-background-light);
     padding-right: 10px;
     min-width: fit-content;
 }
@@ -20,7 +20,6 @@
     margin-left: 20px;
     font-size: 20px;
     border: none;
-    background-color: var(--amigo-background-light);
 }
 
 .post_btn {

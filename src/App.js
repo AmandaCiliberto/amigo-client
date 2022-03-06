@@ -7,8 +7,8 @@ import RecommendationDetailsPage from "./pages/RecommendationDetailsPage";
 import EditRecommendationPage from "./pages/EditRecommendationPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-import IsPrivate from "./components/IsPrivate";  // <== IMPORT
-import IsAnon from "./components/IsAnon"; 
+import IsPrivate from "./components/IsPrivate"; // <== IMPORT
+import IsAnon from "./components/IsAnon";
 import Widgets from "./components/Widgets";
 
 function App() {
@@ -18,14 +18,22 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <IsPrivate>
+              <RecommendationListPage />
+              <Widgets />
+            </IsPrivate>
+          }
+        />
 
         <Route
           path="/recommendations"
           element={
             <IsPrivate>
-              {" "}
-              <RecommendationListPage />{" "}
+              <RecommendationListPage />
+              <Widgets />
             </IsPrivate>
           }
         />
@@ -34,8 +42,8 @@ function App() {
           path="/recommendations/:id"
           element={
             <IsPrivate>
-              {" "}
-              <RecommendationDetailsPage />{" "}
+              <RecommendationDetailsPage />
+              <Widgets />
             </IsPrivate>
           }
         />
@@ -63,14 +71,11 @@ function App() {
           path="/login"
           element={
             <IsAnon>
-              {" "}
-              <LoginPage />{" "}
+              <LoginPage />
             </IsAnon>
           }
         />
       </Routes>
-
-      <Widgets />
     </div>
   );
 }

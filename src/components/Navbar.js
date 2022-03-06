@@ -49,7 +49,7 @@ function Navbar() {
             <NavbarOption
               active
               icon={<HomeRounded color="#9e79f5" size="15px" />}
-              text="Home"
+              text="Feed"
             />
           </Link>
 

@@ -24,7 +24,6 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(46, 46, 46);
-  background-color: var(--amigo-background-light);
 }
 
 a {
