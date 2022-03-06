@@ -1,0 +1,42 @@
+.edit_location {
+       flex: 1;
+    margin-left: 20px;
+    font-size: 16px;
+    border: none;
+    height: 30px;
+    width: 90%;
+    border: 1px solid var(--amigo-background)
+}
+
+.edit_content {
+       flex: 1;
+    margin-left: 20px;
+    font-size: 16px;
+    border: none;
+    height: 80px;
+    width: 90%;
+    border: 1px solid var(--amigo-background)
+}
+
+.label {
+    margin: 20px;
+    font-weight: 600;
+}
+
+.delete_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    width: auto;
+    height: 40px !important;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.delete_btn:hover {
+    background-color: var(--amigo-background-light);
+}

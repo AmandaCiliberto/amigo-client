@@ -43,7 +43,6 @@ function Widgets() {
         <SearchIcon className="widgets_searchIcon" />
         <input placeholder="Find Friends" type="text" />
       </div>
-
       <div className="widgets_widgetContainer">
         {recommendations.map((recommendation) => (
           <UserCard key={recommendation._id} {...recommendation} />

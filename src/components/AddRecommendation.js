@@ -1,14 +1,12 @@
 import { useState, useContext } from "react";
-/* import { useParams } from "react-router-dom"; */
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import uploadImage from "../api/uploadImage";
 import "../css/AddRecommendation.css";
-import { Box, Avatar } from "grommet";
-import { Image , Location} from "grommet-icons";
+import { Avatar } from "grommet";
+import { Image } from "grommet-icons";
 
 const API_URL = "http://0.0.0.0:5005";
-let loading = false;
 
 function AddRecommendation(props) {
   const { user } = useContext(AuthContext);
@@ -18,14 +16,13 @@ function AddRecommendation(props) {
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [location, setLocation] = useState("");
-  const [loading, setLoading] = useState("");
 
   // ******** this method submits the form  ********
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const requestBody = { userId: user._id, content, imageUrl, location };
-    console.log("req body", requestBody);
+    // console.log("req body", requestBody);
     //get token
     const storedToken = localStorage.getItem("authToken");
 
@@ -50,11 +47,6 @@ function AddRecommendation(props) {
   //********  this method handles the file upload ********
   const handleFileUpload = (e) => {
     const uploadData = new FormData();
-
-    //check if image is loading
-    if (!e.target.files[0]) {
-      setLoading(true);
-    } else setLoading(false);
 
     uploadData.append("imageUrl", e.target.files[0]);
 
@@ -114,10 +106,6 @@ function AddRecommendation(props) {
             onChange={(e) => setLocation(e.target.value)}
             style={{ cursor: "pointer", display: "flex" }}
           />
-
-          <div style={{ display: loading ? "block" : "none" }}>
-            Loading Image...
-          </div>
 
           <button type="submit" className="post_btn">
             Recommend

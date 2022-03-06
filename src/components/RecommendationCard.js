@@ -10,7 +10,7 @@ function RecommendationCard({ userId, content, imageUrl, location, _id }) {
   //  findByIdandUpdate
 
   return (
-    <div className="post card">
+    <div className="post">
       <div className="post_avatar">
         <Avatar size={50} color={"grey"} name="Wim Mostmans" round={true} />
       </div>

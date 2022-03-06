@@ -3,8 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import AddComment from "../components/AddComment";
 import CommentCard from "../components/CommentCard";
+import Avatar from "react-avatar";
 import Widgets from "../components/Widgets";
-import { FormPrevious } from "grommet-icons";
+import { FormPrevious, Location, Chat, Favorite } from "grommet-icons";
+import VerifiedIcon from "@mui/icons-material/Verified";
 import RecommendationCard from "../components/RecommendationCard";
 import "../css/RecommendationDetails.css";
 
@@ -41,26 +43,60 @@ function RecommendationDetailsPage(props) {
       {recommendation && (
         <>
           <div className="feed_header">
-
             <Link to="/recommendations">
               <FormPrevious />
             </Link>
-
             <Link
               to={`/recommendations/edit/${id}`}
               style={{ textDecoration: "none" }}
             >
               <button className="edit_btn">Edit</button>
             </Link>
-            
           </div>
 
-          <RecommendationCard
+          <div className="post ">
+            <div className="post_avatar">
+              <Avatar
+                size={50}
+                color={"grey"}
+                name="Wim Mostmans"
+                round={true}
+              />
+            </div>
+            <div className="post_body">
+              <div className="post_header">
+                <div className="post_headerText">
+                  <h3>
+                    {recommendation.userId}{" "}
+                    <span className="post_headerSpecial">
+                      <VerifiedIcon className="post_badge" />
+                    </span>
+                  </h3>
+                </div>
+                <div className="post_headerDescription">
+                  <p>{recommendation.content} </p>
+                </div>
+                <div className="post_location">
+                  <p>
+                    <Location size="20px" />
+                    {recommendation.location}
+                  </p>
+                  <button className="recommend">#recommended</button>
+                </div>
+              </div>
+              <img src={recommendation.imageUrl} alt="recommendation img" />
+              <div className="post_footer">
+                <Chat color="plain" size="20px" />
+                <Favorite color="plain" size="20px" />
+              </div>
+            </div>
+          </div>
+          {/* <RecommendationCard
             content={recommendation.content}
             location={recommendation.location}
             userId={recommendation.userId}
             imageUrl={recommendation.imageUrl}
-          />
+          /> */}
 
           <AddComment
             refreshRecommendations={getRecommendation}

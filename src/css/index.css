@@ -14,7 +14,7 @@
 .app {
   display: flex;
   height: 100vh;
-  max-width: 1300px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px;
@@ -50,17 +50,6 @@ textarea {
   padding: 10px;
   display: inline-block;
   margin: 10px;
-}
-
-
-.card {
-  width: 400px;
-  padding: 10px;
-  border-style: none;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: white;
-  border-radius: 4px;
 }
 
 .link {
