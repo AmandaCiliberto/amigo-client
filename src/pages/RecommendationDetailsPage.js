@@ -15,11 +15,14 @@ function RecommendationDetailsPage() {
   const [recommendation, setRecommendation] = useState(null);
   const { id } = useParams();
   const { user } = useContext(AuthContext);
+  const creator = user;
 
   //function to get recommendation and verify token
   const getRecommendation = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
+
+    console.log("token", storedToken);
     // Send the token through the request "Authorization" Headers
     axios
       .get(`${API_URL}/api/recommendations/${id}`, {
@@ -27,18 +30,16 @@ function RecommendationDetailsPage() {
       })
       .then((response) => {
         const oneRecommendation = response.data;
+        console.log("recommendation thats being refreshed", oneRecommendation);
         setRecommendation(oneRecommendation);
       })
       .catch((error) => console.log(error));
   };
 
   //use effect to run the function once
-  useEffect(
-    () => {
-      getRecommendation();
-    },
-    []
-  );
+  useEffect(() => {
+    getRecommendation();
+  }, []);
 
   return (
     <div className="feed">
@@ -98,14 +99,19 @@ function RecommendationDetailsPage() {
           </div>
 
           <AddComment
+            //refresh recommendations to show new comments
             refreshRecommendations={getRecommendation}
+            creator={creator.name}
             recommendation={id}
-            creator={user}
           />
 
           {recommendation &&
             recommendation.comments.map((comment) => (
-              <CommentCard key={comment._id} {...comment} currentUserId={user} />
+              <CommentCard
+                key={comment._id}
+                creator={creator.name}
+                {...comment}
+              />
             ))}
         </>
       )}

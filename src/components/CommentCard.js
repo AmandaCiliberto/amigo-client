@@ -1,10 +1,9 @@
 import "../css/Comments.css";
 import { Avatar } from "grommet";
 
-// We are deconstructing the props object directly in the parentheses of the function
-function CommentCard({ currentUserId, creator, content, date }) {
-  console.log("creator comment card", creator);
-
+//card to structure each comment
+function CommentCard({ creator, content, date }) {
+  
   return (
     <div className="comment_box">
       <div className="comment_header">

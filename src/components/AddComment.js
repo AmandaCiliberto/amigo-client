@@ -7,8 +7,7 @@ const API_URL = "http://0.0.0.0:5005";
 
 
 function AddComment(props) {
-  console.log("creator name", props.creator.name);
-  console.log('comment', props.comments)
+  console.log('creator props addComment', props.creator)
   
     const [content, setContent] = useState("");
   
@@ -17,8 +16,9 @@ function AddComment(props) {
 
     // We need the recommendation id when creating the new comment
     const { recommendation } = props;
-    // Create an object representing the body of the POST request
-    const requestBody = { content, recommendation };
+    const { creator } = props;
+    const requestBody = { creator, content, recommendation };
+    console.log('req body inside addComment', requestBody)
     const storedToken = localStorage.getItem('authToken');
 
     axios
