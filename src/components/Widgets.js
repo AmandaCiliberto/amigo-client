@@ -34,7 +34,6 @@ function Widgets() {
   // get all recommendations once
   useEffect(() => {
     getAllRecommendations();
-    // console.log();
   }, []);
 
   return (

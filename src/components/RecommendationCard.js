@@ -5,10 +5,6 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
 function RecommendationCard({ userId, content, imageUrl, location, _id }) {
-  console.log("user", userId);
-
-  //  findByIdandUpdate
-
   return (
     <div className="post">
       <div className="post_avatar">
@@ -37,9 +33,7 @@ function RecommendationCard({ userId, content, imageUrl, location, _id }) {
                 <Location size="20px" />
                 {location}
               </p>
-              <button className="recommend">
-                #recommended
-              </button>
+              <button className="recommend">#recommended</button>
             </div>
           </div>
           <img src={imageUrl} alt="recommendation img" />

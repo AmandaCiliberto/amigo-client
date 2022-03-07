@@ -1,20 +1,24 @@
 import { useState } from "react";
 import axios from "axios";
+import { Avatar } from "grommet";
+import '../css/Comments.css';
 
 const API_URL = "http://0.0.0.0:5005";
 
 
 function AddComment(props) {
-  console.log(props)
-  const [content, setContent] = useState("");
+  console.log("creator name", props.creator.name);
+  console.log('comment', props.comments)
+  
+    const [content, setContent] = useState("");
   
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // We need the recommendation id when creating the new comment
-    const { recommendationId } = props;
+    const { recommendation } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { /* date, userId, */ content, recommendationId };
+    const requestBody = { content, recommendation };
     const storedToken = localStorage.getItem('authToken');
 
     axios
@@ -22,7 +26,6 @@ function AddComment(props) {
       .then((response) => {
         // Reset the state to clear the inputs
         setContent("");
-      
         // Invoke the callback function coming through the props
         // from the RecommendationDetailsPage, to refresh the recommendation details
         props.refreshRecommendations();
@@ -32,21 +35,22 @@ function AddComment(props) {
 
   
   return (
-    <div className="AddComment">
-      <h3>Write a comment</h3>
-      
+    <div className="comment_box">
       <form onSubmit={handleSubmit}>
-        {/* <img 
-        src=""        
-        /> */}
-        <textarea
-          type="text"
-          name="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-
-        <button type="submit">Comment</button>
+        <div className="add-comment">
+          <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+          <input
+            className="comment-input"
+            placeholder="Add your reply"
+            type="text"
+            name="content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+          <button className="reply-btn" type="submit">
+            Comment
+          </button>
+        </div>
       </form>
     </div>
   );

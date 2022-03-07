@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import AddComment from "../components/AddComment";
 import CommentCard from "../components/CommentCard";
 import Avatar from "react-avatar";
-import Widgets from "../components/Widgets";
 import { FormPrevious, Location, Chat, Favorite } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
-import RecommendationCard from "../components/RecommendationCard";
 import "../css/RecommendationDetails.css";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://0.0.0.0:5005";
 
-function RecommendationDetailsPage(props) {
+function RecommendationDetailsPage() {
   const [recommendation, setRecommendation] = useState(null);
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
 
   //function to get recommendation and verify token
   const getRecommendation = () => {
@@ -33,9 +33,12 @@ function RecommendationDetailsPage(props) {
   };
 
   //use effect to run the function once
-  useEffect(() => {
-    getRecommendation();
-  }, []);
+  useEffect(
+    () => {
+      getRecommendation();
+    },
+    []
+  );
 
   return (
     <div className="feed">
@@ -50,7 +53,9 @@ function RecommendationDetailsPage(props) {
               to={`/recommendations/edit/${id}`}
               style={{ textDecoration: "none" }}
             >
-              <button className="edit_btn">Edit</button>
+              {user.name === recommendation.userId.name && (
+                <button className="edit_btn">Edit</button>
+              )}
             </Link>
           </div>
 
@@ -67,7 +72,7 @@ function RecommendationDetailsPage(props) {
               <div className="post_header">
                 <div className="post_headerText">
                   <h3>
-                    {recommendation.userId}{" "}
+                    {recommendation.userId.name}{" "}
                     <span className="post_headerSpecial">
                       <VerifiedIcon className="post_badge" />
                     </span>
@@ -91,26 +96,17 @@ function RecommendationDetailsPage(props) {
               </div>
             </div>
           </div>
-          {/* <RecommendationCard
-            content={recommendation.content}
-            location={recommendation.location}
-            userId={recommendation.userId}
-            imageUrl={recommendation.imageUrl}
-          /> */}
 
           <AddComment
             refreshRecommendations={getRecommendation}
-            recommendationId={id}
+            recommendation={id}
+            creator={user}
           />
 
-          <ul>
-            <li>
-              {recommendation &&
-                recommendation.comments.map((comment) => (
-                  <CommentCard key={comment._id} {...comment} />
-                ))}
-            </li>
-          </ul>
+          {recommendation &&
+            recommendation.comments.map((comment) => (
+              <CommentCard key={comment._id} {...comment} currentUserId={user} />
+            ))}
         </>
       )}
     </div>

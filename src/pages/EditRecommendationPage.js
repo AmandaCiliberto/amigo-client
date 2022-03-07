@@ -10,19 +10,19 @@ import { Image } from "grommet-icons";
 
 const API_URL = "http://0.0.0.0:5005";
 
-function EditRecommendationPage(props) {
+function EditRecommendationPage() {
   const [content, setContent] = useState("");
   const [location, setLocation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   const { id } = useParams();
-  /* const { userId } = useParams(); */
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     //get token
     const storedToken = localStorage.getItem("authToken");
+
     axios
       .get(`${API_URL}/api/recommendations/${id}`, {
         //verify token

@@ -1,14 +1,29 @@
+import "../css/Comments.css";
+import { Avatar } from "grommet";
+
 // We are deconstructing the props object directly in the parentheses of the function
-function CommentCard({ userId, content, date }) {
+function CommentCard({ currentUserId, creator, content, date }) {
+  console.log("creator comment card", creator);
+
   return (
-    <div className="CommentCard card">
-      <h3>{userId}</h3>
-      <h4>Comment:</h4>
-      <p>{content}</p>
-      <p>{date}</p>
+    <div className="comment_box">
+      <div className="comment_header">
+        <div>
+          <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+        </div>
+        <div className="username">
+          <h3>{creator}</h3>
+        </div>
+        <div>
+          <p>{date}</p>
+        </div>
+      </div>
+
+      <div className="comment_body">
+        <p>{content}</p>
+      </div>
     </div>
   );
 }
 
 export default CommentCard;
-

@@ -10,8 +10,6 @@ const API_URL = "http://0.0.0.0:5005";
 
 function AddRecommendation(props) {
   const { user } = useContext(AuthContext);
-  // console.log('user id', userId)
-  // const username = userId.name;
 
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -22,7 +20,6 @@ function AddRecommendation(props) {
     e.preventDefault();
 
     const requestBody = { userId: user._id, content, imageUrl, location };
-    // console.log("req body", requestBody);
     //get token
     const storedToken = localStorage.getItem("authToken");
 
@@ -35,7 +32,6 @@ function AddRecommendation(props) {
       )
       .then((response) => {
         // Reset the state
-        // console.log(response)
         setContent("");
         setImageUrl("");
         setLocation("");
@@ -104,7 +100,7 @@ function AddRecommendation(props) {
             name="location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", paddingTop: 10 }}
           />
 
           <button type="submit" className="post_btn">

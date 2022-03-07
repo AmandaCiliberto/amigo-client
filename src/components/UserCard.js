@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import Avatar from "react-avatar";
-import { Chat, Favorite } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
 function UserCard({ userId, content, imageUrl, location, _id }) {
-  console.log("user id", userId);
-
-  //  findByIdandUpdate
 
   return (
     <div className="post card">
