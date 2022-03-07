@@ -31,6 +31,11 @@ function RecommendationDetailsPage() {
       .then((response) => {
         const oneRecommendation = response.data;
         console.log("recommendation thats being refreshed", oneRecommendation);
+        
+        oneRecommendation.comments.sort(function (x, y) {
+          return new Date(y.createdAt) - new Date(x.createdAt);
+        });
+
         setRecommendation(oneRecommendation);
       })
       .catch((error) => console.log(error));
