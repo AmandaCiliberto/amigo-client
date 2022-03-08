@@ -44,6 +44,7 @@ function RecommendationDetailsPage() {
   //use effect to run the function once
   useEffect(() => {
     getRecommendation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
