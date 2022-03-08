@@ -59,24 +59,20 @@ textarea {
 
 .SignupPage,
 .LoginPage {
-  background: #f9eec3;
-  border: 1px solid grey;
-  box-shadow: 2px 5px 10px rgba(145, 145, 145, 0.795);
+  color: white;
+  border: 1px solid var(--amigo-background-light);
+  box-shadow: 2px 5px 10px rgba(173, 173, 173, 0.795);
   width: 400px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 30px;
   border-radius: 18px;
 }
 
 .SignupPage,
 .LoginPage {
-  background-color: #ffffff;
-}
-
-.LoginPage {
-  background-color: #ffffff;
+  background-color:  var(--amigo-color);
 }
 
 .SignupPage form,
@@ -85,6 +81,37 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
+
+.SignupPage input,
+.LoginPage input {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.SignupPage button,
+.LoginPage button {
+  background-color: white;
+  color: var(--amigo-color);
+  border:none;
+  border-radius: 40px;
+  padding: 8px 16px;
+  margin-top: 20px;
+}
+
+.SignupPage button:hover,
+.LoginPage button:hover {
+  background-color: #d0cfd4;
+  cursor: pointer;
+}
+
 
 .CommentCard {
   background-color: #dfeef9;

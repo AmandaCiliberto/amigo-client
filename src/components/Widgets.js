@@ -1,11 +1,8 @@
 import React from "react";
 import "../css/Widgets.css";
 import UserCard from "./UserCard";
-import SearchIcon from "@mui/icons-material/Search";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import RecommendationCard from "./../components/RecommendationCard";
-import AddRecommendation from "../components/AddRecommendation";
 
 const API_URL = "http://localhost:5005";
 

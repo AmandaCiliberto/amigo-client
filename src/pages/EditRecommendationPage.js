@@ -150,6 +150,13 @@ function EditRecommendationPage() {
                       Change Image:
                     </span>
                   </label>
+                  <input
+                    placeholder="Choose Image"
+                    type="file"
+                    id="file-upload"
+                    onChange={(e) => handleFileUpload(e)}
+                    style={{ display: "none" }}
+                  />
                 </div>
 
                 <div>

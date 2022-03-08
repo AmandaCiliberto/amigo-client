@@ -32,7 +32,7 @@ function SignupPage(props) {
     // If the request resolves with an error, set the error message in the state
     axios.post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
-        navigate('/login');
+        navigate('/recommendations');
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -43,7 +43,7 @@ function SignupPage(props) {
   
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <h1 className="title">Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
         <label>Name:</label>
@@ -73,8 +73,8 @@ function SignupPage(props) {
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      {/* <p>Already have account?</p>
+      <Link to={"/login"}> Login</Link> */}
     </div>
   );
 }
