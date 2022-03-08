@@ -38,9 +38,12 @@ function Widgets() {
 
   return (
     <div className="widgets">
-      <div className="widgets_input">
+      {/* <div className="widgets_input">
         <SearchIcon className="widgets_searchIcon" />
         <input placeholder="Find Friends" type="text" />
+      </div> */}
+      <div className="widget_header">
+        <h2>My Friends</h2>
       </div>
       <div className="widgets_widgetContainer">
         {recommendations.map((recommendation) => (

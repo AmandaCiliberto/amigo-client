@@ -12,13 +12,13 @@
     margin-left: 20px;
     background-color: var(--amigo-background-light);
 }
-
+/* 
 .widgets_input > input {
     border: none;
     background-color: var(--amigo-background-light);
     width: 100%;
 }
-
+ */
 .widgets_searchIcon {
     color: grey;
 }
@@ -31,12 +31,14 @@
     background-color: #f5f8fa;
 }
 
-.widgets_widgetContainer > h2 {
-    font-size: 18px;
-    font-weight: 800;
+.widget_header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 15px 20px;
+    display: flex;
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }
-
-
-
-
 

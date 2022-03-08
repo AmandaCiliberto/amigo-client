@@ -1,0 +1,7 @@
+.modal-close-btn {
+    background-color: red;
+    border: none;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}

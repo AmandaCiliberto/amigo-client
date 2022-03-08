@@ -28,7 +28,7 @@ function LoginPage(props) {
         // with the JWT string ->  response.data.authToken
         storeToken(response.data.authToken);
         authenticateUser();
-        /* navigate("/recommendations"); */
+        navigate("/recommendations"); 
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;

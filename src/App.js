@@ -15,23 +15,21 @@ function App() {
   return (
     //following BEM convention
     <div className="app">
-      <Navbar />
-
       <Routes>
         <Route
           path="/"
-          element={
-            <IsPrivate>
+          element={<HomePage />}
+          /* <IsPrivate>
               <RecommendationListPage />
               <Widgets />
-            </IsPrivate>
-          }
+            </IsPrivate> */
         />
 
         <Route
           path="/recommendations"
           element={
             <IsPrivate>
+              <Navbar />
               <RecommendationListPage />
               <Widgets />
             </IsPrivate>
@@ -42,6 +40,7 @@ function App() {
           path="/recommendations/:id"
           element={
             <IsPrivate>
+              <Navbar />
               <RecommendationDetailsPage />
               <Widgets />
             </IsPrivate>
@@ -52,8 +51,8 @@ function App() {
           path="/recommendations/edit/:id"
           element={
             <IsPrivate>
-              {" "}
-              <EditRecommendationPage />{" "}
+              <Navbar />
+              <EditRecommendationPage />
             </IsPrivate>
           }
         />
@@ -62,8 +61,7 @@ function App() {
           path="/signup"
           element={
             <IsAnon>
-              {" "}
-              <SignupPage />{" "}
+              <SignupPage />
             </IsAnon>
           }
         />
