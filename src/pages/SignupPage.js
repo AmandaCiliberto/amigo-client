@@ -4,9 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://amigo-application.herokuapp.com/";
-
-
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
