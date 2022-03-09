@@ -51,12 +51,6 @@ function Widgets() {
         ))}
         <TwitterTweetEmbed tweetId={"1500478225742536717"} />
 
-        <TwitterTimelineEmbed 
-        sourceType="profile"
-        screenName="cilibertoamanda"
-        options={{ height: 400 }}
-        />
-
         <TwitterShareButton 
         url={'https://facebook.com/amandacmr'}
         options={{ text: "#amigoapp is awesome! You shoul try it!", via: "cilibertoamanda" }}
