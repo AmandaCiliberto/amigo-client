@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const API_URL = "http://0.0.0.0:5005";
+
+const API_URL = "https://amigo-application.herokuapp.com";
 
 const AuthContext = React.createContext();
 

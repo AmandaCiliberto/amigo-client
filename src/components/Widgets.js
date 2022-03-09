@@ -4,7 +4,7 @@ import UserCard from "./UserCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function Widgets() {
   const [recommendations, setRecommendations] = useState([]);

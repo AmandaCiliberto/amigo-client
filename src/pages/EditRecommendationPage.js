@@ -8,7 +8,7 @@ import { AuthContext } from "../context/auth.context";
 import uploadImage from "../api/uploadImage";
 import { Image } from "grommet-icons";
 
-const API_URL = "http://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function EditRecommendationPage() {
   const [content, setContent] = useState("");

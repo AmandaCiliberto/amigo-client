@@ -3,7 +3,7 @@ import axios from "axios";
 import { Avatar } from "grommet";
 import '../css/Comments.css';
 
-const API_URL = "http://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 
 function AddComment(props) {

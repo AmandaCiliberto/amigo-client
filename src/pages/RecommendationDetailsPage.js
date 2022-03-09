@@ -9,7 +9,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import "../css/RecommendationDetails.css";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function RecommendationDetailsPage() {
   const [recommendation, setRecommendation] = useState(null);

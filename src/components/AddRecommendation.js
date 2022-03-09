@@ -6,7 +6,7 @@ import "../css/AddRecommendation.css";
 import { Avatar } from "grommet";
 import { Image } from "grommet-icons";
 
-const API_URL = "http://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function AddRecommendation(props) {
   const { user } = useContext(AuthContext);

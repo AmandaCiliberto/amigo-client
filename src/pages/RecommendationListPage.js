@@ -5,7 +5,7 @@ import '../css/Feed.css'
 import RecommendationCard from "./../components/RecommendationCard";
 import AddRecommendation from "../components/AddRecommendation";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function RecommendationListPage() {
   const [recommendations, setRecommendations] = useState([]);

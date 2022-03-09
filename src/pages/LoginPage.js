@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com";
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
