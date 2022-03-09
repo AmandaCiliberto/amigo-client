@@ -1,5 +1,10 @@
 .widgets {
     flex: 0.4;
+    min-width: fit-content;
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .widgets_input {
