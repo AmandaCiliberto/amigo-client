@@ -48,6 +48,7 @@ function AddRecommendation(props) {
 
     uploadImage(uploadData)
       .then((response) => {
+       /*  console.log('image url', response.imageUrl) */
         setImageUrl(response.imageUrl);
       })
       .catch((err) => console.log("Error while uploading the file: ", err));
