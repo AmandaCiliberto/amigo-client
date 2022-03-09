@@ -20,7 +20,7 @@
 .modal-close-btn {
   background-color: transparent;
   border: none;
-  margin-left: 380px;
+  margin-left: 400px;
   text-align: right !important;
   cursor: pointer;
 }
@@ -116,4 +116,9 @@
 
 .left-panel > h2 {
   background-color: red;
+}
+
+label {
+  text-align: left;
+  margin-top: 10px;
 }

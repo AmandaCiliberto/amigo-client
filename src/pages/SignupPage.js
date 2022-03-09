@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://0.0.0.0:5005";
+const API_URL = "https://amigo-application.herokuapp.com/";
 
 
 
