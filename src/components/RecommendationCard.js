@@ -46,9 +46,9 @@ function RecommendationCard({
           </div>
           <img src={imageUrl} alt="recommendation img" />
           <div className="post_footer">
-            <div>
+            <div style={{alignItems: 'center'}}>
               <Chat color="plain" size="20px" />
-              <span>
+              <span style={{ marginLeft: 10 }}>
                 {comments.length} Comments
               </span>
             </div>
