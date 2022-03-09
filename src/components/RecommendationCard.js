@@ -4,8 +4,15 @@ import { Chat, Favorite, Location } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
-function RecommendationCard({ userId, content, imageUrl, location, _id, comments }) {
-  console.log('comments length', comments.length)
+function RecommendationCard({
+  userId,
+  content,
+  imageUrl,
+  location,
+  _id,
+  comments,
+}) {
+  console.log("comments length", comments.length);
   return (
     <div className="post">
       <div className="post_avatar">
@@ -39,8 +46,15 @@ function RecommendationCard({ userId, content, imageUrl, location, _id, comments
           </div>
           <img src={imageUrl} alt="recommendation img" />
           <div className="post_footer">
-            <Chat color="plain" size="20px" /><span style={{marginLeft: -20}}>{comments.length} Comments</span>
-            <Favorite color="plain" size="20px" />
+            <div>
+              <Chat color="plain" size="20px" />
+              <span>
+                {comments.length} Comments
+              </span>
+            </div>
+            <div>
+              <Favorite color="plain" size="20px" />
+            </div>
           </div>
         </div>
       </Link>
