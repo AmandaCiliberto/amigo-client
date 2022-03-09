@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Avatar from "react-avatar";
-import { Chat, Favorite, Location } from "grommet-icons";
+import { Chat, /* Favorite, */ Location } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
