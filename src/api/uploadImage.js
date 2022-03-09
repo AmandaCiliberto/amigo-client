@@ -16,7 +16,7 @@ const storedToken = localStorage.getItem("authToken");
 
 const uploadImage = (file) => {
   return api
-    .post("/upload", file, 
+    .post("/api/upload", file, 
     //verify token
     { headers: { Authorization: `Bearer ${storedToken}` } })
     .then((res) => {
