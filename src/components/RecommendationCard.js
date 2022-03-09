@@ -52,9 +52,11 @@ function RecommendationCard({
                 {comments.length} Comments
               </span>
             </div>
-            <div>
-              <Favorite color="plain" size="20px" />
+
+            <div className="heart">
+              {/* <Favorite className="heart" color="plain" size="20px" /> */}
             </div>
+
           </div>
         </div>
       </Link>
