@@ -39,7 +39,7 @@ function RecommendationCard({ userId, content, imageUrl, location, _id, comments
           </div>
           <img src={imageUrl} alt="recommendation img" />
           <div className="post_footer">
-            <Chat color="plain" size="20px" /><span style={{paddingLeft: -20}}>{comments.length}</span>
+            <Chat color="plain" size="20px" /><span style={{merginLeft: -20}}>{comments.length}</span>
             <Favorite color="plain" size="20px" />
           </div>
         </div>
