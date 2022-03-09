@@ -10,7 +10,6 @@ import "../css/RecommendationDetails.css";
 import { AuthContext } from "../context/auth.context";
 
 const API_URL = "https://amigo-application.herokuapp.com";
-// const API_URL = "http://0.0.0.0:5005";
 
 function RecommendationDetailsPage() {
   const [recommendation, setRecommendation] = useState(null);
@@ -23,7 +22,6 @@ function RecommendationDetailsPage() {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
 
-    console.log("token", storedToken);
     // Send the token through the request "Authorization" Headers
     axios
       .get(`${API_URL}/api/recommendations/${id}`, {

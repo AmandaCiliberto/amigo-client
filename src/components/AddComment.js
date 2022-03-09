@@ -5,9 +5,7 @@ import '../css/Comments.css';
 
 const API_URL = "https://amigo-application.herokuapp.com";
 
-
 function AddComment(props) {
-  console.log('creator props addComment', props.creator)
   
     const [content, setContent] = useState("");
   
@@ -18,7 +16,6 @@ function AddComment(props) {
     const { recommendation } = props;
     const { creator } = props;
     const requestBody = { creator, content, recommendation };
-    console.log('req body inside addComment', requestBody)
     const storedToken = localStorage.getItem('authToken');
 
     axios

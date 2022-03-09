@@ -48,7 +48,6 @@ function AddRecommendation(props) {
 
     uploadImage(uploadData)
       .then((response) => {
-       /*  console.log('image url', response.imageUrl) */
         setImageUrl(response.imageUrl);
       })
       .catch((err) => console.log("Error while uploading the file: ", err));
@@ -67,7 +66,7 @@ function AddRecommendation(props) {
             onChange={(e) => setContent(e.target.value)}
           />
         </div>
-
+        
         <img
           onError={(event) => (event.target.src = "")}
           className="image_preview"

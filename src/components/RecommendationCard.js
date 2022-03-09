@@ -12,7 +12,6 @@ function RecommendationCard({
   _id,
   comments,
 }) {
-  console.log("comments length", comments.length);
   return (
     <div className="post">
       <div className="post_avatar">
@@ -54,7 +53,9 @@ function RecommendationCard({
               </span>
             </div>
 
-            <div className="heart"></div>
+            <div className="heart">
+            <button></button>
+            </div>
           </div>
         </div>
       </Link>

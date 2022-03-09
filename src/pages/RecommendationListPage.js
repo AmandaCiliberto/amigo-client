@@ -45,7 +45,7 @@ function RecommendationListPage() {
       <AddRecommendation refreshRecommendations={getAllRecommendations} />
 
       {recommendations.map((recommendation) => (
-        <RecommendationCard key={recommendation._id} {...recommendation} comments={recommendation.comments} />
+        <RecommendationCard key={recommendation._id} {...recommendation} comments={recommendation.comments} likes={recommendation.likes} />
       ))}
 
     </div>
