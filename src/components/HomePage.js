@@ -1,4 +1,6 @@
 import HomePageNav from "../pages/HomePageNav";
+import { Box, WorldMap } from "grommet";
+import { Github, Reactjs, Node } from "grommet-icons";
 
 function HomePage() {
   return (
@@ -32,20 +34,88 @@ function HomePage() {
 
       <div className="section-two">
         <div className="left-panel">
-          <div>
-            <img
-              src="../images/friends.jpg"
-              alt="friends"
-              className="left-panel-img"
-            />
-          </div>
-          <div>
-            <h2>hy</h2>
-          </div>
+          <img
+            src="../images/shapes.png"
+            alt="friends"
+            className="left-panel-img"
+          />
+        </div>
+        <div className="right-panel">
+          <h2>Are you looking for NEW EXPERIENCES?</h2>
+          <p>
+            Try AMIGO, get recommendations from your friends. It could be
+            products, experiences, adventures, or even a new shop in town.
+          </p>
+        </div>
+      </div>
+
+      <div className="section-three">
+        <div className="right-panel">
+          <h2>Global Reference</h2>
+          <p>
+            Know someone who travelled to Italy? They might recommend a
+            restaurant you should try out next time you visit the country. Only
+            the sky is the limit, for now.
+          </p>
         </div>
 
-        <div className="right-panel">
-          <h2>hi</h2>
+        <div className="left-panel">
+          <Box fill="vertical" overflow="auto" align="center" flex="grow">
+            <WorldMap
+              color="accent-1"
+              hoverColor="control"
+              margin="large"
+              places={[
+                {
+                  location: ["56.162937", "10.203921"],
+                  name: "Aarhus DK",
+                  color: "9E79F5",
+                },
+                {
+                  location: ["55.508018", "8.995185"],
+                  name: "Billund",
+                  color: "9E79F5",
+                },
+              ]}
+            />
+          </Box>
+        </div>
+      </div>
+
+      <div className="footer">
+        <div className="links">
+          <h5> ® Developed by Amanda Rodrigues</h5>
+        </div>
+        <div className="links">
+          <Reactjs color="#00D8FF" />
+          <Node style={{ paddingLeft: 10 }} color="#689F63" />
+        </div>
+
+        <div className="links">
+          <Github />
+          <h5>
+            <a
+              href="https://github.com/AmandaCiliberto/amigo-client"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Github"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Github Client
+            </a>
+          </h5>
+          <Github style={{ marginLeft: 20 }} />
+          <h5>
+            <a
+              href="https://github.com/AmandaCiliberto/amigo-server"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Github"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Github Server
+            </a>
+          </h5>
         </div>
       </div>
     </div>
