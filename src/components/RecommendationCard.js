@@ -5,7 +5,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
 function RecommendationCard({ userId, content, imageUrl, location, _id, comments }) {
-  console.log('comments', comments)
+  console.log('comments length', comments.length)
   return (
     <div className="post">
       <div className="post_avatar">
@@ -39,7 +39,7 @@ function RecommendationCard({ userId, content, imageUrl, location, _id, comments
           </div>
           <img src={imageUrl} alt="recommendation img" />
           <div className="post_footer">
-            <Chat color="plain" size="20px" />
+            <Chat color="plain" size="20px" /><span>{comments.length}</span>
             <Favorite color="plain" size="20px" />
           </div>
         </div>
