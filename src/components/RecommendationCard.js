@@ -4,7 +4,8 @@ import { Chat, Favorite, Location } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
-function RecommendationCard({ userId, content, imageUrl, location, _id }) {
+function RecommendationCard({ userId, content, imageUrl, location, _id, comments }) {
+  console.log('comments', comments)
   return (
     <div className="post">
       <div className="post_avatar">
