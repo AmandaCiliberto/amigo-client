@@ -3,7 +3,7 @@ import "../css/Widgets.css";
 import UserCard from "./UserCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterTweetEmbed } from "react-twitter-embed";
+import { TwitterShareButton, TwitterTweetEmbed } from "react-twitter-embed";
 
 const API_URL = "https://amigo-application.herokuapp.com";
 
