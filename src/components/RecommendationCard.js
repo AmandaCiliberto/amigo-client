@@ -54,7 +54,6 @@ function RecommendationCard({
             </div>
 
             <div className="heart">
-            <button></button>
             </div>
           </div>
         </div>
