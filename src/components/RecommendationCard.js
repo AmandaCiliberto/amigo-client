@@ -45,6 +45,7 @@ function RecommendationCard({
             </div>
           </div>
           <img src={imageUrl} alt="recommendation img" />
+         
           <div className="post_footer">
             <div style={{alignItems: 'center'}}>
               <Chat color="plain" size="20px" />
@@ -53,10 +54,7 @@ function RecommendationCard({
               </span>
             </div>
 
-            <div className="heart">
-              {/* <Favorite className="heart" color="plain" size="20px" /> */}
-            </div>
-
+            <div className="heart"></div>
           </div>
         </div>
       </Link>

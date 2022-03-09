@@ -4,12 +4,13 @@ import axios from "axios";
 import AddComment from "../components/AddComment";
 import CommentCard from "../components/CommentCard";
 import Avatar from "react-avatar";
-import { FormPrevious, Location, Chat, Favorite } from "grommet-icons";
+import { FormPrevious, Location, Chat } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import "../css/RecommendationDetails.css";
 import { AuthContext } from "../context/auth.context";
 
 const API_URL = "https://amigo-application.herokuapp.com";
+// const API_URL = "http://0.0.0.0:5005";
 
 function RecommendationDetailsPage() {
   const [recommendation, setRecommendation] = useState(null);
@@ -98,8 +99,14 @@ function RecommendationDetailsPage() {
               </div>
               <img src={recommendation.imageUrl} alt="recommendation img" />
               <div className="post_footer">
-                <Chat color="plain" size="20px" />
-                <Favorite color="plain" size="20px" />
+                <div style={{ alignItems: "center" }}>
+                  <Chat color="plain" size="20px" />
+                  <span style={{ marginLeft: 10 }}>
+                    {recommendation.comments.length} Comments
+                  </span>
+                </div>
+
+                <div className="heart"></div>
               </div>
             </div>
           </div>
