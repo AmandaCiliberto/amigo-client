@@ -3,8 +3,10 @@ import "../css/Widgets.css";
 import UserCard from "./UserCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterTweetEmbed } from "react-twitter-embed";
 
 const API_URL = "https://amigo-application.herokuapp.com";
+
 
 function Widgets() {
   const [recommendations, setRecommendations] = useState([]);
@@ -40,12 +42,26 @@ function Widgets() {
         <input placeholder="Find Friends" type="text" />
       </div> */}
       <div className="widget_header">
-        <h2>My Friends</h2>
+        <h2>What's Happening</h2>
       </div>
       <div className="widgets_widgetContainer">
+        <h2>My Friends</h2>
         {recommendations.map((recommendation) => (
           <UserCard key={recommendation._id} {...recommendation} />
         ))}
+        <TwitterTweetEmbed tweetId={"1500478225742536717"} />
+
+        <TwitterTimelineEmbed 
+        sourceType="profile"
+        screenName="cilibertoamanda"
+        options={{ height: 400 }}
+        />
+
+        <TwitterShareButton 
+        url={'https://facebook.com/amandacmr'}
+        options={{ text: "#amigoapp is awesome! You shoul try it!", via: "cilibertoamanda" }}
+        />
+
       </div>
     </div>
   );

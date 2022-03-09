@@ -65,18 +65,6 @@ function HomePage() {
               color="accent-1"
               hoverColor="control"
               margin="large"
-              places={[
-                {
-                  location: ["56.162937", "10.203921"],
-                  name: "Aarhus DK",
-                  color: "9E79F5",
-                },
-                {
-                  location: ["55.508018", "8.995185"],
-                  name: "Billund",
-                  color: "9E79F5",
-                },
-              ]}
             />
           </Box>
         </div>

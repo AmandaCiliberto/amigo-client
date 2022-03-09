@@ -51,14 +51,6 @@ function SignupPage(props) {
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Image:</label>
-        <input
-          type="text"
-          name="imageUrl"
-          value={imageUrl}
-          onChange={handleImage}
-        />
-
         <label>Password:</label>
         <input
           type="password"
