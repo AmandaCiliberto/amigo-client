@@ -22,28 +22,25 @@ function Navbar() {
     <nav className="sidebar">
       <h3 className="sidebar_logo">AMIGO</h3>
 
-      {/*    UPDATE     */}
       {isLoggedIn && (
         <>
-          {/* <Link to="/recommendations" className="link">
-            <NavbarOption text="Browse" />
-          </Link> */}
-          <div>
-            <div className="post_avatar">
-              <Box direction="row" gap="small">
-                <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
-              </Box>
-              <div className="post_headerText">
-                <h3>
-                  {user && user.name}{" "}
-                  <span className="post_headerSpecial">
-                    <VerifiedIcon className="post_badge" />
-                  </span>
-                </h3>
+          <div className="profile-btn">
+            <Link to="/profile" className="profile-link">
+              <div className="post_avatar">
+                <Box direction="row" gap="small">
+                  <Avatar src="https://images.unsplash.com/flagged/photo-1557786458-77474e6ff1bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
+                </Box>
+                <div className="post_headerText">
+                  <h3>
+                    {user && user.name}
+                    <span className="post_headerSpecial">
+                      <VerifiedIcon className="post_badge" />
+                    </span>
+                  </h3>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
-          {/* <span>Hi {user && user.name}</span> */}
 
           <Link to="/recommendations" style={{ textDecoration: "none" }}>
             <NavbarOption

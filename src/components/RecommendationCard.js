@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Avatar from "react-avatar";
-import { Chat, /* Favorite, */ Location } from "grommet-icons";
+import { Chat, Location } from "grommet-icons";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 // We are deconstructing props object directly in the parentheses of the function
@@ -43,18 +43,19 @@ function RecommendationCard({
               <button className="recommend">#recommended</button>
             </div>
           </div>
-          <img src={imageUrl} alt="recommendation img" />
-         
+          <img
+            onError={(event) => (event.target.src = " ")}
+            src={imageUrl}
+            alt=""
+          />
+
           <div className="post_footer">
-            <div style={{alignItems: 'center'}}>
+            <div style={{ alignItems: "center" }}>
               <Chat color="plain" size="20px" />
-              <span style={{ marginLeft: 10 }}>
-                {comments.length} Comments
-              </span>
+              <span style={{ marginLeft: 10 }}>{comments.length} Comments</span>
             </div>
 
-            <div className="heart">
-            </div>
+            <div className="heart"></div>
           </div>
         </div>
       </Link>

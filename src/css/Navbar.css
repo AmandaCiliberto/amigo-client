@@ -30,7 +30,21 @@
     margin-top: 20px !important;
 }
 
+.profile-link {
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.profile-link:hover {
+    color: var(--amigo-color);
+}
+
+.profile-btn:hover {
+    background-color: #e4dff1;
+    border-radius: 30px;
+    color: var(--amigo-color);
+    transition: color 100ms ease-out;
+}
 
 .link {
     color: white;

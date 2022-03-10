@@ -1,86 +1,89 @@
 .addPost {
-    padding-bottom: 10px;
-    border-bottom: 8px solid var(--amigo-background-light);
-    padding-right: 10px;
-    min-width: fit-content;
+  padding-bottom: 10px;
+  border-bottom: 8px solid var(--amigo-background-light);
+  padding-right: 10px;
+  min-width: fit-content;
 }
 
 .addPost > form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .addPost_input {
-    padding: 20px;
-    display: flex;
+  padding: 20px;
+  display: flex;
 }
 
-.addPost_input > input{
-    flex: 1;
-    margin-left: 20px;
-    font-size: 20px;
-    border: none;
+.addPost_input > input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
 }
 
 .addPost_input > textarea {
-     flex: 1;
-    margin-left: 20px;
-    font-size: 16px;
-    border: none;
-    height: 90px;
-    border: 1px solid var(--amigo-background)
+  flex: 1;
+  margin-left: 20px;
+  font-size: 16px;
+  border: none;
+  height: 90px;
+  border: 1px solid var(--amigo-background);
 }
 
-
 .post_btn {
-    display: flex;
-    align-items: center;
-    background-color: var(--amigo-color) !important;
-    border: none !important;
-    color: white !important;
-    font-weight: 900 !important;
-    text-transform: inherit !important;
-    border-radius: 30px !important;
-    width: auto;
-    height: 40px !important;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--amigo-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  width: auto;
+  height: 40px !important;
+  cursor: pointer;
 }
 
 .post_imageInput {
-    border: none;
-    padding: 10px;
-    display:flex;
-    justify-content: center;
-    width: 80px;
-    margin-left: 50px;
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  margin-left: 50px;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 12px;
 }
 
 .post_icons {
-    cursor: pointer;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .post_imageInput:hover {
-    background-color: #e4dff1;
-    border-radius: 30px;
-    color: var(--amigo-color);
-    transition: color 100ms ease-out;
+  background-color: #e4dff1;
+  border-radius: 30px;
+  color: var(--amigo-color);
+  transition: color 100ms ease-out;
 }
 
 .image_preview {
-    width: 150px;
-    margin-left: 17%;
-    margin-bottom: 20px;
-    border-radius: 20px ;
-    max-height: 100px;
-    object-fit: cover;
+  width: 150px;
+  margin-left: 17%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  max-height: 100px;
+  object-fit: cover;
 }
 
 .post_location {
-     flex: 1;
-    margin: 0 10px;
-    font-size: 16px;
-    border: none;
+  flex: 1;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
 }

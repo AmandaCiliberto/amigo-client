@@ -7,23 +7,17 @@ import RecommendationDetailsPage from "./pages/RecommendationDetailsPage";
 import EditRecommendationPage from "./pages/EditRecommendationPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-import IsPrivate from "./components/IsPrivate"; // <== IMPORT
+import Profile from "./pages/Profile";
+import IsPrivate from "./components/IsPrivate"; 
 import IsAnon from "./components/IsAnon";
 import Widgets from "./components/Widgets";
 
 function App() {
   return (
-    //following BEM convention
     <div className="app">
       <Routes>
-        <Route
-          path="/"
-          element={<HomePage />}
-          /* <IsPrivate>
-              <RecommendationListPage />
-              <Widgets />
-            </IsPrivate> */
-        />
+
+        <Route path="/" element={<HomePage />} />
 
         <Route
           path="/recommendations"
@@ -46,7 +40,6 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/recommendations/edit/:id"
           element={
@@ -56,7 +49,6 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/signup"
           element={
@@ -71,6 +63,16 @@ function App() {
             <IsAnon>
               <LoginPage />
             </IsAnon>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              <Navbar />
+              <Profile />
+            </IsPrivate>
           }
         />
       </Routes>

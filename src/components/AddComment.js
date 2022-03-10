@@ -1,14 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import { Avatar } from "grommet";
-import '../css/Comments.css';
+import "../css/Comments.css";
 
 const API_URL = "https://amigo-application.herokuapp.com";
 
 function AddComment(props) {
-  
-    const [content, setContent] = useState("");
-  
+  const [content, setContent] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,21 +15,20 @@ function AddComment(props) {
     const { recommendation } = props;
     const { creator } = props;
     const requestBody = { creator, content, recommendation };
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/comments`, requestBody,{ headers: { Authorization: `Bearer ${storedToken}` } })
+      .post(`${API_URL}/api/comments`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
         // Reset the state to clear the inputs
         setContent("");
-        // Invoke the callback function coming through the props
-        // from the RecommendationDetailsPage, to refresh the recommendation details
         props.refreshRecommendations();
       })
       .catch((error) => console.log(error));
   };
 
-  
   return (
     <div className="comment_box">
       <form onSubmit={handleSubmit}>

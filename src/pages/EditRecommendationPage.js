@@ -110,7 +110,7 @@ function EditRecommendationPage() {
                     type="text"
                     name="location"
                     value={location}
-                    onChange={(e) => setContent(e.target.value)}
+                    onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
               </div>

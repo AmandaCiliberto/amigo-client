@@ -30,7 +30,7 @@ function RecommendationDetailsPage() {
       .then((response) => {
         const oneRecommendation = response.data;
         console.log("recommendation thats being refreshed", oneRecommendation);
-        
+
         oneRecommendation.comments.sort(function (x, y) {
           return new Date(y.createdAt) - new Date(x.createdAt);
         });
@@ -95,7 +95,11 @@ function RecommendationDetailsPage() {
                   <button className="recommend">#recommended</button>
                 </div>
               </div>
-              <img src={recommendation.imageUrl} alt="recommendation img" />
+              <img
+                onError={(event) => (event.target.src = " ")}
+                src={recommendation.imageUrl}
+                alt=""
+              />
               <div className="post_footer">
                 <div style={{ alignItems: "center" }}>
                   <Chat color="plain" size="20px" />

@@ -3,8 +3,8 @@ import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import uploadImage from "../api/uploadImage";
 import "../css/AddRecommendation.css";
-import { Avatar } from "grommet";
 import { Image } from "grommet-icons";
+import { Avatar } from "grommet";
 
 const API_URL = "https://amigo-application.herokuapp.com";
 
@@ -42,6 +42,7 @@ function AddRecommendation(props) {
 
   //********  this method handles the file upload ********
   const handleFileUpload = (e) => {
+    console.log("the file uploaded is: ", e.target.files[0]);
     const uploadData = new FormData();
 
     uploadData.append("imageUrl", e.target.files[0]);
@@ -55,9 +56,9 @@ function AddRecommendation(props) {
 
   return (
     <div className="addPost">
-      <form onSubmit={handleSubmit} /* encType="multipart/form-data" */>
+      <form onSubmit={handleSubmit}>
         <div className="addPost_input">
-          <Avatar src="//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80" />
+          <Avatar src="https://images.unsplash.com/flagged/photo-1557786458-77474e6ff1bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
           <input
             placeholder="What do you recommend?"
             type="text"
@@ -66,23 +67,16 @@ function AddRecommendation(props) {
             onChange={(e) => setContent(e.target.value)}
           />
         </div>
-        
+
         <img
           onError={(event) => (event.target.src = "")}
           className="image_preview"
           src={imageUrl}
-          alt=''
+          alt=""
         />
 
         <div className="post_icons">
-          <label
-            htmlFor="file-upload"
-            style={{
-              cursor: "pointer",
-              display: "flex",
-            }}
-            className="post_imageInput"
-          >
+          <label htmlFor="file-upload" style={{}} className="post_imageInput">
             <Image />
           </label>
           <input

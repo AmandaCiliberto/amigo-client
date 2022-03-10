@@ -24,11 +24,9 @@ function LoginPage(props) {
     axios
       .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
-        // Request to the server's endpoint `/auth/login` returns a response
-        // with the JWT string ->  response.data.authToken
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/recommendations"); 
+        navigate("/recommendations");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -55,9 +53,6 @@ function LoginPage(props) {
         <button type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      {/* <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link> */}
     </div>
   );
 }
