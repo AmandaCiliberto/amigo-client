@@ -1,6 +1,6 @@
 import HomePageNav from "../pages/HomePageNav";
 import { Box, WorldMap } from "grommet";
-import { Github, Reactjs, Node } from "grommet-icons";
+import { Github, Reactjs, Node, LinkedinOption } from "grommet-icons";
 
 function HomePage() {
   return (
@@ -61,11 +61,7 @@ function HomePage() {
 
         <div className="left-panel">
           <Box fill="vertical" overflow="auto" align="center" flex="grow">
-            <WorldMap
-              color="accent-1"
-              hoverColor="control"
-              margin="large"
-            />
+            <WorldMap color="accent-1" hoverColor="control" margin="large" />
           </Box>
         </div>
       </div>
@@ -102,6 +98,18 @@ function HomePage() {
               style={{ color: "white", textDecoration: "none" }}
             >
               Github Server
+            </a>
+          </h5>
+          
+          <h5>
+            <a
+              href="https://www.linkedin.com/in/amandaciliberto/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Linkedin"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              <LinkedinOption style={{ marginLeft: 20 }} />
             </a>
           </h5>
         </div>
